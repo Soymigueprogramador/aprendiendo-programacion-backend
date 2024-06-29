@@ -1,0 +1,6 @@
+Historia de JavaScript:
+    en la decada de los 90 con la llegada de internet surge la famosa guerra de los navegadores. los mas conocidos eran "Netkate y Explorer".
+    estos navegadores tenian un problema, el problema era que cada navegador tenia su propio lenguaje de programacion.
+    en 1995 se le pide a la organizacion "ECMA" desarrollar un lenguaje que sea universal para los navegadores.
+    en 1997 nace la primer version de JavaScript conocida como "ECMASCRIPT1", Desde ese entonces todos los años se lanzaron nuevas versiones de este mismo lenguaje.
+    pero en 2015 llega "ECMASCRIPT6" con todas las novedades.

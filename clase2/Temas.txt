@@ -1,0 +1,6 @@
+Temas a ver en esta clase: 
+    1. Plantillas literales.
+    2. Funciones.
+    3. Scope.
+    4. Clouseres.
+    5. POO / Clases

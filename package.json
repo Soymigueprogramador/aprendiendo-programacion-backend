@@ -1,0 +1,11 @@
+{
+  "name": "aprendiendo-programacion-backend",
+  "version": "1.0.0",
+  "description": "Este es un proyecto de repaso solamente",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguel Salazar",
+  "license": "ISC"
+}

@@ -1,0 +1,6 @@
+temario de la clase 3 
+
+1) Decestructuracion
+2) Valores por defecto
+3) Trabajo por modulos
+4) Funciones e las clases
