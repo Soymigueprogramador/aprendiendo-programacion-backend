@@ -1,0 +1,8 @@
+Manejo de archivos.
+
+temas:
+1) file system
+2) manejo de archivos sincronicos
+3) manejo de archivos con callback
+4) manejo de archivos con promesas
+5) manejo de datos complejos

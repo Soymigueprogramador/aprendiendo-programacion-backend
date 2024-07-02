@@ -3,6 +3,8 @@
     guardarlo dentro de una variables auxiliar para que asi sea mas facil el trabajo dentro de la aplicacion.
 */
 
+// Desestructurando un objeto
+
 // Descestructuracion.
 const pelicula = {
     titulo: 'El padrino',
@@ -55,6 +57,28 @@ const pelicula2 = {
     }
 };
 
-const {protagonista: {nombre}} = pelicula
+const {protagonista: apellido} = pelicula;
 
-console.log(pelicula)
+console.log(pelicula, pelicula2, apellido)
+
+// Desestructurando un  array.
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+
+// Antes de ES6
+
+let uno = numeros[0]
+let dos = numeros[1]
+let tres = numeros[2] 
+
+console.log(uno, dos, tres,)
+
+// Ahora con ES6
+/*
+    la sintaxis es la misma que con los objetos pero en vez de yudar las {llaves} usamos [corchetes].
+    En este caso como no tenemos propiedades no importa el nombre de las variables auxiliares, solo importa el orden de las mismas.
+*/
+
+let [ indiceCero, indiceUno, indiceDos, indiceTres, ] = numeros;
+
+console.log(indiceCero, indiceUno, indiceDos, indiceTres,);
