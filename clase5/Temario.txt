@@ -1,0 +1,7 @@
+Temario de la clase 5 'NPM':
+
+temas:
+1) Node.js
+2) Modulos nativos
+3) npm 
+4) instalaciones globales y locales

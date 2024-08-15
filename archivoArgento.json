@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Pepe",
+    "apellido": "Argento",
+    "edad": 50
+  },
+  {
+    "nombre": "Moni",
+    "apellido": "Argento",
+    "edad": 45
+  },
+  {
+    "nombre": "Paola",
+    "apellido": "Argento",
+    "edad": 17
+  },
+  {
+    "nombre": "Coky",
+    "apellido": "Argento",
+    "edad": 15
+  },
+  {
+    "nombre": "Fatiga",
+    "apellido": "Argento",
+    "edad": 7
+  },
+  {
+    "nombre": "Suegra",
+    "apellido": "Desconocido",
+    "edad": 70
+  }
+]
