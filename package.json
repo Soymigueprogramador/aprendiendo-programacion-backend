@@ -10,7 +10,10 @@
   "author": "Miguel Salazar",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.30.1",
+    "express": "^4.19.2",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.4"
   }
 }
