@@ -1,0 +1,5 @@
+Temario clase 7 express avanzado.
+
+temas: 
+1) Codico de estado en HTP
+2) Metodos de peticiones
