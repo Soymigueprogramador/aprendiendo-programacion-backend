@@ -45,11 +45,91 @@
 // Extructuras, condicionales y ciclos en handlebars.
 
 /*
+    A los archivos .handlebars le podemos pasar distintos elementos para que sean renderizados.
 
+    Estructura:
+    Pasos para renderizar estos datos:
+    1- Elejimos el endpoint o ruta donde lo vamos a mostrar.
+    2- Creamos un objeto dentro del bloque de codigo de la ruta.
+        const estudianteDeBackendConSamu = {
+            nombre: 'Miguel',
+            apellido: 'Salazar',
+            soyBackend: true
+        };
+    3- En la linea donde indicamos es archivo que renderizaremos tenemos que agregarle esto para indicarle que va a renderizar.
+       res.render('index', { estudianteDeBackendConSamu, title: ' Clase 9 con handlebars ' });
+    4- En el archivo .handlebars tenemos que abrir doble llave e indicar el nombre del objeto.propiedad del mismo
+       {{ nombreDelObjeto.propiedadAMostrar }}
+    
+    condicionales: 
+    Pasos para renderizar condicionales:
+    1- Vamos al archivo .handlebars en donde queremos usar el codicional y hacemos este codigo
+       
+       {{#if estudianteDeBackendConSamu.soyBackend }}
+         <p> ¡Sí, soy backend, por ahora...! </p>
+       {{else}}
+         <p> No soy backend, solo me gusta el frontend...! </p>
+       {{/if}}
+    2- En el objeto solo tenemos que cambiar el valor buleano y se cambia el bloque de codigo a renderizar.
+    Aclaracion:
+    1- No se deben dejar espacion entre las etiquetas if, else y el codigo debe estar escrito asi como en el ejemplo.
+    2- Handlebars solo acepta renderizado condicional con buleanos.
+    3- En caso de tener una exprecion y queres pasarla a buleado tenes que hacer esto:
+       nombreExprecion: nombrePropiedadAComprar = valorDePropiedad
+       trabajo: salario > 1500000.
+       Esto lo tenes que hacer en la app.
+
+    Ciclos:
+    Pasos para trabajar con ciclos en handlebars:
+    1- Para crear y usar cicle en handlebars tenemos que hacer esto.
+       {{#each productos}}
+        <div>
+            <img src={{ this.imagen }} alt={{ this.nombre }} />
+            <h2> Nombre: {{ this.nombre }} </h2>
+            <p> Descripcion: {{ this.descripcion }} </p>
+            <p> Precio: {{ this.precio }} </p>
+            <button> Comprar </button>
+        </div>
+       {{/each}}
+       En este caso es un array de productos pero sirve como ejemplo.
+*/
+
+// Carpetas layout y partials:
+
+/*
+    Layout:
+    En esta carpeta se guarda el archivo main.handlebars con el codigo de las plantillas que forman nuestra app.
+
+    Partials:
+    En esta carpeta se guardan los codigo fragmentados que son reutilizables para nuestra app.
+*/
+
+// Acomodando el router en handlebars.
+/*
+    Pasos para ordenar el router en handlebars.
+    1- Creamos un archivo llamado ' views.router.js ' dentro de la carpeta routers.
+    2- Dentro del archivos ' views.router.js ' creamos los endpoint necesarios.
+    3- Dentro del archivo raiz tenemos que importarlo y configurarlo de esta forma
+       A) import nombreDELarchivo from './rutaDelArchivo';}
+       B) app.use('/nombreDelArchivo', nombreDelArchivoEnLaImportacion);
+*/
+
+// Agregando css y JavaScript.
+
+/*
+    Debemos recordar que la carpeta public la vamos a usar para guardar los archivos estaticos que deben estar al alcance del usuario.
+    Para agregar archivos de css y js hacemos esto:
+    1- Creamos la carpeta public por fuera de la carpeta src.
+    2- Dentro de public creamos una carpeta para css y otra para js
+    3- Dentro de la carpeta js creamos un archivo .js y lo enlazamos asi en el archivo que queremos enlazar
+       <script src="/js/index.js"></script>
+       En css hacemos lo mismo solo que en este caso lo enlazamos en el main.handlebars dentro de la etiqueta dead
+       <link rel="stylesheet" href="/css0/styles.css" />
 */
 
 // Creando el servidor.
 import express from "express";
+import viewsRouter from './routers/views.router.js';
 import { engine } from "express-handlebars";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -64,6 +144,9 @@ const __dirname = dirname(__filename);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('./views', viewsRouter);
+app.use(express.static('public'));
+
 
 // Configuramos Handlebars:
 app.engine('handlebars', engine());

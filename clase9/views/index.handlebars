@@ -1,1 +1,16 @@
 <h1> Hola a todos desde handlebars </h1>
+
+<h1> Mi nombre es: {{ estudianteDeBackendConSamu.nombre }} </h1>
+<h1> Mi apellido es: {{ estudianteDeBackendConSamu.apellido }} </h1>
+
+{{#if estudianteDeBackendConSamu.soyBackend }}
+    <p> ¡Sí, soy backend, por ahora...! </p>
+{{else}}
+    <p> No soy backend, solo me gusta el frontend...! </p>
+{{/if}}
+
+<!-- Asi es como se mencionan a los partials en handlebars -->
+{{>card}}
+
+<!-- Coloca el script al final del body -->
+<script src="/js/index.js"></script>
