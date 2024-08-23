@@ -1,4 +1,4 @@
 clase 10 websoquet
 
 temas:
-1) 
+1) Desarrollo de chat con websoquet2) deploy de nuestra primer aplicacion en glitch.com 

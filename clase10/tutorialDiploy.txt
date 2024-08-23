@@ -1,0 +1,11 @@
+¿ Como deployar en glitch.comn ?
+
+pasos:
+1) Vamos a https://glitch.com/ 
+2) Si no tenes cuenta te registras con GitHub, si ya tenes cuenta solo inicias sesion
+3) Creamos y cargamos el repo en GitHub5) 
+4) Una ves que entramos a nuestra cuenta tenemos que dar clicks en:
+    A) Nuevo proyecto
+    B) Importar desde GitHub
+    C) Le pasamos la direccion del repo del GitHub 
+    D) Aceptamos y esperamos a que se cargue
