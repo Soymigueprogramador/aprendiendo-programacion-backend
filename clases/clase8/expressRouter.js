@@ -1,6 +1,5 @@
 // ¿ Que es Express router ?
 
-
 /*
     Express router es una herramienta que me permite organizar las rutas de mi app en modulos.
 */
@@ -63,21 +62,15 @@ app.use('/api/usuarios', usuariosRouter);
 app.use('/api/mascotas', mascotasRouter);
 app.use(express.static('public'));
 
-
-
 /*
 app.get('/', ( req, res ) => {
     res.send('Hola banckend');
 });
 */
 
-
 app.listen(PORT, () => { 
     console.log(`Servidor levantado en http://localhost:${PORT}`);
 });
-
-
-
 
 // Archivos estaticos.
 
@@ -141,4 +134,62 @@ function middleware( req, res, next ) { // next le indica al sistema que tiene q
 
 app.get('/middleware', middleware, ( req, res ) => {
     res.send('Middleware al nivel de rutas');
+});
+
+// ¿ Que es multer ?
+
+/*
+    Multer es un middlewares de terceros que me permite gestionar de forma simple la carga de archivos al servidor.
+*/
+
+// Trabajando con codigo de multer:
+
+/*
+    Pasos para trabajar con multer:
+    1- Lo instalamos con npm i multer
+    2- Lo importamos en nuestra app.js con import multer from 'multer'
+    3- Configuramos la ruta donde multer va a guardar los archivos cargados con esta linea de codigo. 
+       const upload = multer({ dest1: './public/img/subidas' });
+    4- Creamos la ruta con el metodo post 
+       app.post('/upload', upload.single('imagen'), (req, res) => {
+          res.send('Imagen subida');
+       });
+       Como en este caso lo estamos subiendo mediante postman tenemos que hacer esto:
+       A) Abrimos postman
+       B) Configuramos postman con estos parametros:
+          1- Seteamos postman en el metodo POST.
+          2- Usamos esta URL http://localhost${PUERTO}/upload.
+          3- Seleccionamos body
+          4- Seleccionamos form-data
+          5- En el item de key ponemos upload.single('LaClaveLaSacasDeAca')
+          6- Enter en send
+    5- Configuramos para que cuando suba un archivo se guarde en una rita espesifica y con el nombre origina. para ellos usamos este codigo 
+       const storage = multer.diskStorage({
+          destination: (req, file, cd) => {
+            cd(null, './public/img/');
+          },
+          filename: (req, file, cd) => {
+             cd(null, file.originalname);
+          }
+       });
+       Dbemos tener en cuenta que primero debemos declarar este codigo y despues declarar la constante de upload.
+*/
+
+import multer from 'multer';
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cd) => {
+        cd(null, './public/img/');
+    },
+
+    filename: (req, file, cd) => {
+        cd(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage });
+
+app.post('/upload', upload.single('imagen'), (req, res) => {
+    res.send('Se subió');
 });
