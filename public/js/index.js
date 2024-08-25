@@ -1,1 +1,0 @@
-console.log('Hola desde la consola para handlebars')
