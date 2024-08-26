@@ -1,0 +1,6 @@
+clase 12 MongoDB
+
+temas:
+1) Conceptos de base de datos.
+2) Bases de datos relacional y no relacional.
+3) Concepto e instalacion de MongoDB
