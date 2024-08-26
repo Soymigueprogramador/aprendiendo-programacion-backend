@@ -1,0 +1,14 @@
+Comandos iniciales de MongoDB
+
+Comandos iniciales para arrancar:
+1- show dbs = Nos muestra todas las bases de daqtos que tenemos en nuestro sistema
+
+2- use nombreDeLaBaseDeDatos = nos crea y nos posiciona dentro de nuestra base de datos y en caso de que usemos este comando con el nombre
+   de una base de datos que ya existe simplemente nos va a llevar hacia ella.
+
+3- db.createCollection("nombreDeLaColeccion") = Nos crea una coleccion dentro de nuestra base de datos
+
+4- db.nombreDeLaColeccion.insertOne({ datos }) = Nos crea un datos dentro de la coleccion
+
+5- db.nombreDeLaColeccion.find() = Nos permite rebisar los datos dentro de la coleccion que esta dentro de la base de datos
+
