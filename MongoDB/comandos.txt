@@ -12,3 +12,49 @@ Comandos iniciales para arrancar:
 
 5- db.nombreDeLaColeccion.find() = Nos permite rebisar los datos dentro de la coleccion que esta dentro de la base de datos
 
+6- db = Nos muestra el nombre de la base de datosen la que estamos parados
+
+7- db.dropDatabase = Nos permite eliminar una base de datos
+
+8- show collections = Nos lista todas las colleciones que tenemos dentro de una base de datos
+
+9- db.nombreColleccion.drop = Elimina la collecion
+
+10- db.nombreCollection.insertMany() = Nos permite agregar varios documentos al mismo tiempo
+
+11- db.nombreCollection.find(ArgumentosFormatoJSON) = Nos filtra entre los documentos de una collecion (No me funciono).
+
+12- db.nombreCollection({ $and: { propiedad: valor }, { propiedad: { $gt: { valor } } } }) = Nos permite filtrar datos que cumplen con las 2 condiciones indicadas.
+
+13- db.mascotas.find({ $or: [{ propiedad: valor }, { propiedad: valor }] }) = Nos permite filtrar para casos en que los datos cumplen una o la otra condiciones
+
+14- db.mascotas.find({propiedad: {$ne: valor}}) = Nos permite filtrar ente los datos que no cumplen con la condicion indicada.
+
+15- db.mascotas.countDocuments() = Nos permite contar cuandtos documentos tenemos dentro de una coleccion.
+
+16- db.mascotas.countDocuments({ propiedad: valor }) = Nos permite saber cuantos documentos hay con estos parametros dentro de la coleccion.
+
+17- db.mascotas.find({}, { propiedad: 1, propiedad: 1 }) = Nos busca dentro de toda la colleccion y nos muestra solo los datos indicados de cada documento
+
+18- db.mascotas.find({}, {propiedad: valor}) = Nos permite indicar que dato no va a mostrar de cada documento. 
+
+19- db.mascotas.find().sort({propiedad: valor}) = Con el 1 nos ordena de menos a mayor, con el -1 nos ordena de mayor a menor.
+
+20- db.mascotas.find().skip(cantidad) = Nos permite omitir una cantidad de documentos que se muestran como respuesta a nuestra peticion.
+
+21- db.mascotas.find().limit(cantidad) = Nos permite liminar la cantidad de documentos que se nos va a mostrar.
+
+22- db.mascotas.updateOne({"nombre": "Max"}, {$set: { "nombre": "max" }}) = Actualizamos un unico documento dentro de la coleccion.
+
+23- db.mascotas.updateMany({"nombre": "Max"}, {$set: { "nombre": "max" }}) = Nos permite actualizar varios documentos a la vez.
+
+24- db.mascotas.updateMany({ propiedad: valor }, { $set: { propiedad: valor, propiedad: valor}}) = Nos permite agregar o actualizar un campo ya existente.
+
+26- db.mascotas.deleteOne({ propiedad: valor }) = Nos permite eliminar un documento espesifico.
+
+26- db.mascotas.deleteMant({ propiedad: valor }) = Nos permite eliminar varios documento espesifico.
+
+Aclaracion:
+1) MongoDb es ' case_sensitive ' esto quiere decir que es sensible a matusculas y minusculas.
+2) Si te equivocaste al escribir un comando no hay ningun riesgo de perder datos.
+3) MongoDB usa camel_case = holaMama 

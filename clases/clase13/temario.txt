@@ -1,0 +1,6 @@
+clase 13 CRUD en MongoDB
+
+temas:
+1) crud 
+2) filtros
+3) crud-up
